@@ -13,10 +13,10 @@ public class Main {
         UserInterface userInterface = uiFactory.build(scanner.nextLine());
         Game game = Game.getInstance();
         game.attach(userInterface);
-        while (game.isCheckmate()) {
+        do {
             userInterface.showTurn();
             userInterface.movePiece();
-        }
+        } while (game.isCheckmate());
         System.out.println(UserInterface.CHECKMATE_MESSAGE);
     }
 }
