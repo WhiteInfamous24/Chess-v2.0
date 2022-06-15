@@ -1,1 +1,1 @@
-# Chess2
+# Chess-v2.0
