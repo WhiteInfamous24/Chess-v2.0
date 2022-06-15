@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-import factory.impl.UIFactory;
 import model.Board;
 import userInterface.UserInterface;
 import userInterface.impl.ConsoleUI;
+import utils.patterns.factory.impl.UIFactory;
 
 public class Main {
     public static void main(String[] args) {

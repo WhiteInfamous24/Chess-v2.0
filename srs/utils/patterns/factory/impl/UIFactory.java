@@ -1,12 +1,12 @@
-package factory.impl;
+package utils.patterns.factory.impl;
 
-import factory.Factory;
 import model.pieces.impl.Bishop;
 import model.pieces.impl.King;
 import userInterface.UserInterface;
 import userInterface.impl.ConsoleUI;
 import userInterface.impl.WindowUI;
 import utils.enums.ColorEnum;
+import utils.patterns.factory.Factory;
 
 public class UIFactory extends Factory {
     private static UIFactory instance;

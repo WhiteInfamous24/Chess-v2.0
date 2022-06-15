@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
 import exceptions.InvalidPositionException;
-import factory.impl.PieceFactory;
 import model.Board;
 import model.pieces.Piece;
 import utils.Movement;
@@ -9,6 +8,7 @@ import utils.Position;
 import utils.SearchArray;
 import utils.enums.ColorEnum;
 import utils.enums.PieceEnum;
+import utils.patterns.factory.impl.PieceFactory;
 import utils.patterns.observer.Observable;
 
 public class Game extends Observable {
@@ -201,9 +201,9 @@ public class Game extends Observable {
     }
 
     /*
-    analiza si el rey se ve acorralado, viendo si en caso de haber jaque, el rey tiene movimientos posibles,
-    incluso en el caso de que pueda llegar a comer una pieza rival
-    */
+     * analiza si el rey se ve acorralado, viendo si en caso de haber jaque, el rey tiene movimientos posibles,
+     * incluso en el caso de que pueda llegar a comer una pieza rival
+     */
     public boolean isCheckmate() {
         if (isCheck()) {
             ArrayList<Position> tentative_movements = notAttackedPositionsInCheck(board.getKing(turn));
@@ -221,8 +221,8 @@ public class Game extends Observable {
     }
 
     /*
-    se le pasa una posicion que debe ser la del rey, y retorna un arraylist con las posiciones que no se ven atacadas alrrededor del rey
-    */
+     * se le pasa una posicion que debe ser la del rey, y retorna un arraylist con las posiciones que no se ven atacadas alrrededor del rey
+     */
     private ArrayList<Position> notAttackedPositionsInCheck(Position pos) {
         ArrayList<Position> output = new ArrayList<>();
         ArrayList<Position> around_positions = board.getPiece(pos).possibleMovements(pos);
@@ -243,9 +243,9 @@ public class Game extends Observable {
     //Logic Helpers
 
     /*
-    verifica que, si la ficha realiza una trayectoria larga, no colisione con otras piezas en el trayecto,
-    a excepcion de la posicion final donde puede llegar a haber una pieza cualquiera
-    */
+     * verifica que, si la ficha realiza una trayectoria larga, no colisione con otras piezas en el trayecto,
+     * a excepcion de la posicion final donde puede llegar a haber una pieza cualquiera
+     */
     private boolean analizeTrajectory(Position posOne, Position posTwo) {
         if (board.getPiece(posOne).getLongMovement()) { //veo si la pieza realiza movimientos de trayectoria
             boolean no_obstruction = true;
@@ -349,9 +349,9 @@ public class Game extends Observable {
     }
 
     /*
-    se le pasa una posicion por argumento y devuelve un booleano en el caso de
-    que esa posicion se vea atacada por alguna pieza enemiga
-    */
+     * se le pasa una posicion por argumento y devuelve un booleano en el caso de
+     * que esa posicion se vea atacada por alguna pieza enemiga
+     */
     private boolean isAttacked(Position pos) {
         ColorEnum opponent;
         ArrayList<Position> positions = new ArrayList<>();
@@ -371,9 +371,9 @@ public class Game extends Observable {
     }
 
     /*
-    se le pasa un arraylist de posiciones por argumento y devuelve un booleano en el caso de
-    que alguna de esas posiciones se vea atacada po alguna pieza enemiga
-    */
+     * se le pasa un arraylist de posiciones por argumento y devuelve un booleano en el caso de
+     * que alguna de esas posiciones se vea atacada po alguna pieza enemiga
+     */
     private boolean isAttacked(ArrayList<Position> pos) {
         ColorEnum opponent;
         ArrayList<Position> positions = new ArrayList<>();

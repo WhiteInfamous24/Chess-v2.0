@@ -17,6 +17,7 @@ public class GameService {
     private static GameService instance;
 
     private GameService() {
+        
     }
 
     public static GameService getInstance() {

@@ -112,5 +112,4 @@ public class WindowUI extends UserInterface implements ActionListener {
         menuWindow.pack();
         menuWindow.setVisible(true);
     }
-
 }

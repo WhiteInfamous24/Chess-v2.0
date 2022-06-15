@@ -1,6 +1,5 @@
-package factory.impl;
+package utils.patterns.factory.impl;
 
-import factory.Factory;
 import model.pieces.Piece;
 import model.pieces.impl.Bishop;
 import model.pieces.impl.King;
@@ -9,6 +8,7 @@ import model.pieces.impl.Pawn;
 import model.pieces.impl.Queen;
 import model.pieces.impl.Rook;
 import utils.enums.ColorEnum;
+import utils.patterns.factory.Factory;
 
 public class PieceFactory extends Factory<Piece> {
     private static PieceFactory instance;
